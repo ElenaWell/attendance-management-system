@@ -1,0 +1,64 @@
+id,name,year,section
+1001,Naruto Uzumaki,12,Naruto
+1002,Sasuke Uchiha,12,Naruto
+1003,Sakura Haruno,12,Naruto
+1004,Kakashi Hatake,12,Naruto
+1005,Shikamaru Nara,12,Naruto
+1006,Hinata Hyuga,12,Naruto
+1007,Rock Lee,12,Naruto
+1008,Neji Hyuga,12,Naruto
+
+2001,Eren Yeager,11,Attack on Titan
+2002,Mikasa Ackerman,11,Attack on Titan
+2003,Armin Arlert,11,Attack on Titan
+2004,Levi Ackerman,11,Attack on Titan
+2005,Hange Zoe,11,Attack on Titan
+2006,Jean Kirstein,11,Attack on Titan
+2007,Connie Springer,11,Attack on Titan
+2008,Sasha Blouse,11,Attack on Titan
+
+3001,Tanjiro Kamado,10,Demon Slayer
+3002,Nezuko Kamado,10,Demon Slayer
+3003,Zenitsu Agatsuma,10,Demon Slayer
+3004,Inosuke Hashibira,10,Demon Slayer
+3005,Kyojuro Rengoku,10,Demon Slayer
+3006,Giyu Tomioka,10,Demon Slayer
+3007,Shinobu Kocho,10,Demon Slayer
+3008,Muichiro Tokito,10,Demon Slayer
+
+4001,Yuji Itadori,9,Jujutsu Kaisen
+4002,Megumi Fushiguro,9,Jujutsu Kaisen
+4003,Nobara Kugisaki,9,Jujutsu Kaisen
+4004,Satoru Gojo,9,Jujutsu Kaisen
+4005,Yuta Okkotsu,9,Jujutsu Kaisen
+4006,Maki Zenin,9,Jujutsu Kaisen
+4007,Toge Inumaki,9,Jujutsu Kaisen
+4008,Panda,9,Jujutsu Kaisen
+4009,Aoi Todo,9,Jujutsu Kaisen
+
+5001,Taro Sakamoto,8,Sakamoto Days
+5002,Shin Asakura,8,Sakamoto Days
+5003,Lu Xiaotang,8,Sakamoto Days
+5004,Heisuke Mashimo,8,Sakamoto Days
+5005,Nagumo,8,Sakamoto Days
+5006,Shishiba,8,Sakamoto Days
+5007,Osaragi,8,Sakamoto Days
+5008,Kindaka,8,Sakamoto Days
+
+6001,Monkey D. Luffy,7,One Piece
+6002,Roronoa Zoro,7,One Piece
+6003,Nami,7,One Piece
+6004,Usopp,7,One Piece
+6005,Sanji,7,One Piece
+6006,Tony Tony Chopper,7,One Piece
+6007,Nico Robin,7,One Piece
+6008,Jinbe,7,One Piece
+
+7001,Izuku Midoriya,6,My Hero Academia
+7002,Katsuki Bakugo,6,My Hero Academia
+7003,Shoto Todoroki,6,My Hero Academia
+7004,Ochaco Uraraka,6,My Hero Academia
+7005,Tenya Iida,6,My Hero Academia
+7006,Tsuyu Asui,6,My Hero Academia
+7007,Eijiro Kirishima,6,My Hero Academia
+7008,Momo Yaoyorozu,6,My Hero Academia

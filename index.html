@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+
+    <div class="header-left">
+        <h1>Attendance System</h1>
+        <p class="subtitle">
+            Student Attendance Dashboard
+        </p>
+    </div>
+
+    <div class="header-right">
+        <p id="current-date"></p>
+        <h2 id="current-time"></h2>
+    </div>
+
+</header>
+
+<hr>
+
+<section class="dashboard-cards">
+
+    <div class="card">
+        <h3>Students</h3>
+        <h2 id="total-students">57</h2>
+    </div>
+
+    <div class="card">
+        <h3>Present</h3>
+        <h2 id="present-count">57</h2>
+    </div>
+
+    <div class="card">
+        <h3>Pending</h3>
+        <h2 id="pending-count">55</h2>
+    </div>
+
+    <div class="card">
+        <h3>Absent</h3>
+        <h2 id="absent-count">0</h2>
+    </div>
+
+</section>
+
+<section class="controls">
+
+    <input
+        type="text"
+        id="search-input"
+        placeholder="Search student..."
+    /> <!-- I put EMOJI here-->
+
+
+    <select id="year-filter">
+        <option>All Years</option>
+    </select>
+
+    <select id="section-filter">
+        <option>All Sections</option>
+    </select>
+
+
+</section>
+
+<section class="content-layout">
+
+    <section class="table-panel">
+
+    <div class="table-header">
+
+        <h3>Attendance Records</h3>
+
+        <div class="admin-tools">
+
+            <button id="admin-tools-btn">
+                Admin Tools ▾
+            </button>
+
+            <div id="admin-tools-menu" class="admin-menu">
+                
+                <!-- In this indention-->
+                <button id="export-attendance-btn">
+                    Export Attendance
+                </button>
+
+                <hr>
+
+                <button id="mark-all-present-btn">
+                    Mark All Present
+                </button>
+
+                <button id="mark-all-pending-btn">
+                    Mark All Pending
+                </button>
+
+                <hr>
+
+                <button id="reset-session-btn">
+                   ⟳ Reset Session
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Section</th>
+                <th>Attendance</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="student-list">
+
+        </tbody>
+
+    </table>
+
+</section>
+
+    <aside class="activity-panel">
+
+        <div class="activity-header">
+
+            <h3>Recently Updated</h3>
+
+            <span class="live-indicator">
+
+               <span class="live-dot"></span>
+
+               LIVE
+
+            </span>
+
+        </div>
+
+        <div id="activity-list">
+            <p class="empty-activity">
+                Waiting for attendance updates...
+            </p>
+        </div>
+
+    </aside>
+
+</section>
+<div id="confirmation-modal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 id="modal-title">
+            Confirm Action
+        </h2>
+
+        <p id="modal-message">
+            Are you sure?
+        </p>
+
+        <div class="modal-buttons">
+
+            <button id="cancel-btn">
+                Cancel
+            </button>
+
+            <button id="confirm-btn">
+                Confirm
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
