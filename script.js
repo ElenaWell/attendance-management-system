@@ -87,6 +87,7 @@ let activities =
 // DOM ELEMENTS
 
 
+
 const studentList =
     document.getElementById("student-list");
 
@@ -153,6 +154,64 @@ const cancelBtn =
 const confirmBtn =
     document.getElementById("confirm-btn");
 
+const logoutButton =
+    document.getElementById("logout-btn");
+
+// NEW ADDITION
+
+const currentUser =
+    JSON.parse(sessionStorage.getItem("currentUser"));
+
+
+const loggedInUser =
+    document.getElementById("logged-in-user");
+
+loggedInUser.textContent =
+    `Logged in as: ${currentUser.username}`;
+
+
+
+
+// RBAC
+
+const currentRole =
+    currentUser.role;
+
+console.log(currentRole); // gotta remove this later 
+
+const dashboardSubtitle =
+    document.getElementById("dashboard-subtitle");
+
+if (currentRole === "admin") {
+
+    dashboardSubtitle.textContent =
+        "Administrator Dashboard";
+
+} else if (currentRole === "teacher") {
+
+    dashboardSubtitle.textContent =
+        "Teacher Attendance Dashboard";
+
+} else if (currentRole === "student") {
+
+    dashboardSubtitle.textContent =
+        "Student Attendance Dashboard";
+
+}
+    
+      // Restricting admin tools for non-admin users
+const adminTools =
+    document.querySelector(".admin-tools");
+
+    if (currentRole !== "admin") {
+
+    adminTools.style.display = "none";
+
+}
+
+
+
+
 
 
 // DISPLAY STUDENTS
@@ -164,22 +223,17 @@ function displayStudents(studentArray) {
 
     studentArray.forEach(student => {
 
-        studentList.innerHTML += `
-            <tr>
-                <td>${student.id}</td>
-                <td>${student.name}</td>
-                <td>${student.year}</td>
-                <td>${student.section}</td>
-                <td>
-                    
+        const attendanceControl =
+            currentRole === "student"
+                ? `<span class="attendance-status ${student.status.toLowerCase()}">${student.status}</span>`
+                : `
                     <select
                         class="status-dropdown ${student.status.toLowerCase()}"
                         data-id="${student.id}"
                     >
-                        <option 
+                        <option
                             value="Pending"
                             ${student.status === "Pending" ? "selected" : ""}
-
                         >
                             Pending
                         </option>
@@ -189,7 +243,6 @@ function displayStudents(studentArray) {
                             ${student.status === "Present" ? "selected" : ""}
                         >
                             Present
-
                         </option>
 
                         <option
@@ -198,9 +251,18 @@ function displayStudents(studentArray) {
                         >
                             Absent
                         </option>
-
                     </select>
-                    
+                `;
+
+        studentList.innerHTML += `
+            <tr>
+                <td>${student.id}</td>
+                <td>${student.name}</td>
+                <td>${student.year}</td>
+                <td>${student.section}</td>
+
+                <td>
+                    ${attendanceControl}
                 </td>
             </tr>
         `;
@@ -208,7 +270,6 @@ function displayStudents(studentArray) {
     });
 
 }
-
 
 
 // POPULATE SECTION FILTER
@@ -548,6 +609,30 @@ function showConfirmation(title, message, action) {
 
 }
 
+    // LOGOUT FUNCTION
+
+logoutButton.addEventListener(
+    "click",
+    function () {
+
+        showConfirmation(
+            "Confirm Logout",
+            "Are you sure you want to log out?",
+            function () {
+
+                sessionStorage.removeItem(
+                    "currentUser"
+                );
+
+                window.location.href =
+                    "login.html";
+
+            }
+        );
+
+    }
+);
+
 // EVENT LISTENERS
 
 
@@ -731,3 +816,5 @@ setInterval(
     updateDateTime,
     1000
 );
+
+
