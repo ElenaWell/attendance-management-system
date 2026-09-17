@@ -112,6 +112,9 @@ const pendingCount =
 const absentCount =
     document.getElementById("absent-count");
 
+const excusedCount =
+    document.getElementById("excused-count");
+    
 const currentDate =
     document.getElementById("current-date");
 
@@ -251,6 +254,13 @@ function displayStudents(studentArray) {
                         >
                             Absent
                         </option>
+                        
+                        <option
+                            value="Excused"
+                            ${student.status === "Excused" ? "selected" : ""}
+                        >
+                            Excused
+                        </option>
                     </select>
                 `;
 
@@ -333,12 +343,19 @@ function updateDashboard() {
             student.status === "Absent"
         ).length;
 
+    const excused =
+        students.filter(student =>
+            student.status === "excused"
+        ).length;
+
     presentCount.textContent =
         present;
     pendingCount.textContent =
         pending;
     absentCount.textContent =
         absent;
+    excusedCount.textContent =
+        excused;
 
 }
 
