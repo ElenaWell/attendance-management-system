@@ -1,3 +1,5 @@
+import { supabase } from "./supabase.js";
+
 const students = [
   { id: 1001, name: "Naruto Uzumaki", year: 12, section: "Naruto", status: "Pending" },
   { id: 1002, name: "Sasuke Uchiha", year: 12, section: "Naruto", status: "Pending" },
